@@ -1,19 +1,21 @@
-const score = function (studentScore, totalScore = 100) {
-    const percentage = (studentScore / totalScore) * 100
+let score = function (studentScore, totalPossible = 100) {
     let letterGrade = ''
-    if (percentage >= 90) {
+    let percent = (studentScore / totalPossible) * 100
+    if (percent > 90) {
         letterGrade = 'A'
-    } else if (percentage >=80) {
+    } else if (percent > 80) {
         letterGrade = 'B'
-    } else if (percentage >=70) {
+    }
+    else if (percent > 70) {
         letterGrade = 'C'
-    } else if (percentage >=60) {
+    }
+    else if (percent > 60) {
         letterGrade = 'D'
     } else {
-        letterGrade = "F"
-    }
-    return `You got a ${letterGrade} (${percentage}%)!`
+        letterGrade = 'F'
+           }
+    return `You got a ${letterGrade} (${percent}%)!`
 }
 
-const scoreText = score(15, 20)
-console.log(scoreText)
+let grade = score(19, 20)
+console.log(grade)

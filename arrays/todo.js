@@ -12,11 +12,13 @@ console.log(`You have ${todos.length} todos:`)
 // console.log(`Todo: ${todos[0]}`)
 // console.log(`Todo: ${todos[todos.length -2]}`)
 
-// todos.forEach(function (item, index) {
-//     const num = index + 1
-//     console.log(`${num}. ${item}`)
-// })
+todos.forEach(function (item, index) {
+    const num = index + 1
+    console.log(`${num}. ${item}`)
+})
 
-for (let count = 0; todos.length > 0; count++) {
-    console.log(todos[count])
+for (let count = 0; count < todos.length; count++) {
+    const num = count + 1
+    const todo = todos[count]
+    console.log(`${num}. ${todo}`)
 }

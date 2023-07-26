@@ -1,3 +1,7 @@
+// Global scope (convertFahrenheitToCelsius, tempOne, tempTwo)
+    // Local scope (fahrenheit, celsius)
+        // Local scope (isFreezing)
+
 let convertFahrenheitToCelsius = function (fahrenheit) {
     let celsius = (fahrenheit - 32) * 5/9
 
@@ -10,6 +14,9 @@ let convertFahrenheitToCelsius = function (fahrenheit) {
 
 let tempOne = convertFahrenheitToCelsius(32)
 let tempTwo = convertFahrenheitToCelsius(68)
+
+// cannot access fahrenheit or celsius here in this global scope
+
 
 console.log(tempOne)
 console.log(tempTwo)
