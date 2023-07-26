@@ -62,7 +62,7 @@ console.log(findNotes(notes, 'eating'))
 // }
 
 const note = findNote(notes, 'some other office modifications')
-console.log(note)
+// console.log(note)
 
 // console.log(notes.length)
 // console.log(notes)
