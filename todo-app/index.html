@@ -1,14 +1,18 @@
 <!DOCTYPE html>
+
 <html>
-    <head>
-    </head>
+    <head></head>
     <body>
-        <h1>Cameron's Todos</h1>
-        <p>Paragraph 1</p>
-        <p>Paragraph the 2</p>
-        <p>Paragraph 3</p>
-        <p>Paragraph 4</p>
-        <p>Paragraph 5</p>
+        <h1>Todos</h1>
+        <input id="search-text" type="text" placeholder="Filter todos">
+        <label>
+            <input id="filter-completed" type="checkbox"> Hide Completed
+        </label>
+        <div id="todos"></div>
+        <form id="todo-form">
+            <input type="text" placeholder="What do you need to do?" name="todoInput">
+            <button>Submit</button>
+        </form>
         <script src="todo-app.js"></script>
     </body>
 </html>
