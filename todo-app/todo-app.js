@@ -1,3 +1,5 @@
+'use strict'
+
 let todos = getSavedTodos()
 
 const filters = {
@@ -8,13 +10,13 @@ const filters = {
 renderTodos(todos, filters)
 
 
-document.querySelector('#search-text').addEventListener('input', function (e) {
+document.querySelector('#search-text').addEventListener('input', (e) => {
     filters.searchText = e.target.value
     renderTodos(todos, filters)
 })
 
 
-document.querySelector('#todo-form').addEventListener('submit', function (e) {
+document.querySelector('#todo-form').addEventListener('submit', (e) => {
     e.preventDefault()
     todos.push({
         id: uuidv4(),
@@ -26,7 +28,7 @@ document.querySelector('#todo-form').addEventListener('submit', function (e) {
     e.target.elements.todoInput.value = ''
 })
 
-document.querySelector('#filter-completed').addEventListener('change', function(e) {
+document.querySelector('#filter-completed').addEventListener('change', (e) => {
     console.log(e.target.checked)
     filters.hideCompleted = e.target.checked
     renderTodos(todos, filters)

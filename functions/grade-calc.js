@@ -1,6 +1,11 @@
 let score = function (studentScore, totalPossible = 100) {
+    if (typeof studentScore !== 'number' || typeof totalPossible !== 'number') {
+        throw Error('Argument must be a number')
+    }
+
     let letterGrade = ''
     let percent = (studentScore / totalPossible) * 100
+
     if (percent > 90) {
         letterGrade = 'A'
     } else if (percent > 80) {
@@ -13,9 +18,15 @@ let score = function (studentScore, totalPossible = 100) {
         letterGrade = 'D'
     } else {
         letterGrade = 'F'
-           }
+            } 
     return `You got a ${letterGrade} (${percent}%)!`
-}
+    }
+    
 
-let grade = score(19, 20)
-console.log(grade)
+
+try {
+    let grade = score(5, 20)
+    console.log(grade)
+} catch (e) {
+    console.log('Please enter numbers instead')
+}
