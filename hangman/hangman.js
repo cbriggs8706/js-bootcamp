@@ -6,7 +6,7 @@ class Hangman {
         this.status = 'playing'
     }
     calculateStatus() {
-        const finished = this.word.every((letter) => this.guessedLetters.includes(letter))
+        const finished = this.word.every((letter) => this.guessedLetters.includes(letter) || letter === ' ')
 
         if (this.remainingGuesses === 0) {
             this.status = 'failed'
@@ -16,46 +16,45 @@ class Hangman {
             this.status = 'playing'
         }
     }
-    getStatusMessage() {
+    get statusMessage() {
         if (this.status === 'playing') {
             return `Guesses left: ${this.remainingGuesses}`
         } else if (this.status === 'failed') {
-            return `Nice try! The word was "${this.word.join('')}"`
+            return `Nice try! The word was "${this.word.join('')}".`
         } else {
             return 'Great work! You guessed the word.'
         }
     }
-    getPuzzle() {
+    get puzzle() {
         let puzzle = ''
-    
-    this.word.forEach((letter) => {
-        if (this.guessedLetters.includes(letter) || letter === ' ') {
-            puzzle += letter
-        } else {
-            puzzle += '*'
-        }
-    });
-    
-    return puzzle
+
+        this.word.forEach((letter) => {
+            if (this.guessedLetters.includes(letter) || letter === ' ') {
+                puzzle += letter
+            } else {
+                puzzle += '*'
+            }
+        })
+
+        return puzzle
     }
     makeGuess(guess) {
         guess = guess.toLowerCase()
-    const isUnique = !this.guessedLetters.includes(guess)
-    const isBadGuess = !this.word.includes(guess)
-   
-    if (this.status !== 'playing') {
-        return
-    }
-   
-    if (isUnique) {
-        this.guessedLetters.push(guess)
-    }
+        const isUnique = !this.guessedLetters.includes(guess)
+        const isBadGuess = !this.word.includes(guess)
 
-    if (isUnique && isBadGuess) {
-        this.remainingGuesses--
-    }
+        if (this.status !== 'playing') {
+            return
+        }
 
-    this.calculateStatus()
+        if (isUnique) {
+            this.guessedLetters.push(guess)
+        }
+
+        if (isUnique && isBadGuess) {
+            this.remainingGuesses--
+        }
+
+        this.calculateStatus()
     }
 }
-
