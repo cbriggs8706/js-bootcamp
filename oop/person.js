@@ -1,4 +1,5 @@
 // Prototypal Inheritance
+// myPerson --> Person.prototype --> Object.prototype --> null
 
 class Person {
     constructor(firstName, lastName, age, likes = []) {
@@ -9,11 +10,12 @@ class Person {
     }
     getBio() {
         let bio = `${this.firstName} is ${this.age}.`
-    
-    this.likes.forEach((like) => {
-        bio += ` ${this.firstName} likes ${like}.`
-    })
-    return bio
+
+        this.likes.forEach((like) => {
+            bio += ` ${this.firstName} likes ${like}.`
+        })
+
+        return bio
     }
     set fullName(fullName) {
         const names = fullName.split(' ')
@@ -33,7 +35,7 @@ class Employee extends Person {
     getBio() {
         return `${this.fullName} is a ${this.position}.`
     }
-    getYearsLeft () {
+    getYearsLeft() {
         return 65 - this.age
     }
 }
@@ -43,22 +45,15 @@ class Student extends Person {
         super(firstName, lastName, age, likes)
         this.grade = grade
     }
+    updateGrade(change) {
+        this.grade += change
+    }
     getBio() {
         const status = this.grade >= 70 ? 'passing' : 'failing'
-        return `${this.firstName} is ${status} in class.`
-    }
-    updateGrade (points) {
-        this.grade += points
+        return `${this.firstName} is ${status} the class.`
     }
 }
 
-
-const student1 = new Student('Andrew', 'Mead', 27, 72, ['Teaching', 'Biking'])
-student1.fullName = 'Clancy Turner'
-console.log(student1.getBio())
-student1.updateGrade(-20)
-console.log(student1.getBio())
-
-const employee1 = new Employee('Andrew', 'Mead', 27, 'Teacher', ['Teaching', 'Biking'])
-employee1.fullName = 'Clancy Turner'
-console.log(employee1.getBio())
+const me = new Employee('Andrew', 'Mead', 27, 'Teacher', [])
+me.fullName = 'Clancey Turner'
+console.log(me.getBio())

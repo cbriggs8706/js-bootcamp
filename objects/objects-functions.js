@@ -1,10 +1,10 @@
-let bookOne = {
+let myBook = {
     title: '1984',
     author: 'George Orwell',
     pageCount: 326
 }
 
-let bookTwo = {
+let otherBook = {
     title: 'A Peoples History',
     author: 'Howard Zinn',
     pageCount: 723
@@ -13,17 +13,17 @@ let bookTwo = {
 let getSummary = function (book) {
     return {
         summary: `${book.title} by ${book.author}`,
-        pageCountSummary: `${book.title} is ${book.pageCount} pages long.`
+        pageCountSummary: `${book.title} is ${book.pageCount} pages long`
     }
-}    
+}
 
-let bookSummary = getSummary(bookOne)
-let otherBookSummary = getSummary(bookTwo)
+let bookSummary = getSummary(myBook)
+let otherBookSummary = getSummary(otherBook)
 
 console.log(bookSummary.pageCountSummary)
 
-//Challenge
-
+// Challenge area
+// Create function - take fahrenheit in - return object with all three
 
 let convertFahrenheit = function (fahrenheit) {
     return {

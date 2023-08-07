@@ -1,58 +1,19 @@
 const todos = [{
-    text: 'Walk the dog',
+    text: 'Order cat food',
+    completed: false
+}, {
+    text: 'Clean kitchen',
     completed: true
 }, {
-    text: 'Take out trash',
-    completed: false
-}, {
-    text: 'Feed chickens',
+    text: 'Buy food',
     completed: true
 }, {
-    text: 'Water garden',
+    text: 'Do work',
     completed: false
 }, {
-    text: 'Wash dishes',
-    completed: false
+    text: 'Exercise',
+    completed: true
 }]
-
-// console.log('You have ' + todos.length + ' todos:')
-// console.log(todos[todos.length -5])
-// console.log(todos[todos.length -2])
-
-// todos.splice(2, 1)
-// todos.push('Fold laundry')
-// todos.shift()
-
-// console.log(`You have ${todos.length} todos:`)
-// // console.log(`Todo: ${todos[0]}`)
-// // console.log(`Todo: ${todos[todos.length -2]}`)
-
-// todos.forEach(function (item, index) {
-//     const num = index + 1
-//     console.log(`${num}. ${item}`)
-// })
-
-// for (let count = 0; count < todos.length; count++) {
-//     const num = count + 1
-//     const todo = todos[count]
-//     console.log(`${num}. ${todo}`)
-// }
-
-// const deleteTodo = function (todos, todoText) {
-//         const index = todos.findIndex(function (todo, index) {
-//         return todo.text.toLowerCase() === todoText.toLowerCase()
-//     })
-
-//     if (index > -1) {
-//         todos.splice(index, 1)
-//     }
-// }
-
-const getThingsToDo = function (todos) {
-    return todos.filter(function (todo, index) {
-        return todo.completed === false
-    })
-}
 
 const sortTodos = function (todos) {
     todos.sort(function (a, b) {
@@ -63,14 +24,29 @@ const sortTodos = function (todos) {
         } else {
             return 0
         }
-    }) 
+    })
 }
 
+const deleteTodo = function (todos, todoText) {
+    const index = todos.findIndex(function (todo) {
+        return todo.text.toLowerCase() === todoText.toLowerCase()
+    })
+
+    if (index > -1) {
+        todos.splice(index, 1)
+    }
+}
+
+const getThingsToDo = function (todos) {
+    return todos.filter(function (todo) {
+        return !todo.completed
+    })
+}
 
 sortTodos(todos)
 console.log(todos)
 
-//console.log(getThingsToDo(todos))
-
-// deleteTodo(todos, 'feed chickens')
+// console.log(getThingsToDo(todos))
+ 
+// deleteTodo(todos, '!!buy food')
 // console.log(todos)

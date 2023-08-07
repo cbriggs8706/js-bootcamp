@@ -1,21 +1,16 @@
-// const myAge = 16
-// const message = myAge >= 18 ? 'You can vote' : 'You cannot vote'
+// const myAge = 7
+// const message = myAge >= 18 ? 'You can vote!' : 'You cannot vote.'
 // console.log(message)
 
-const myAge = 16
+const myAge = 20
 const showPage = () => {
-    console.log('Showing the page')
+    return 'Showing the page'
 }
-
 const showErrorPage = () => {
-    console.log('Showing the error page')
+    return 'Showing the error page'
 }
+const message = myAge >= 21 ? showPage() : showErrorPage()
+console.log(message)
 
-myAge >= 21 ? showPage() : showErrorPage()
-
-
-
-//
-const team = ['Tyler', 'Porter', 'Chalise', 'Rockwell', 'Jim']
-
+const team = ['Tyler', 'Porter', 'Andrew', 'Ben', 'Mike']
 console.log(team.length <= 4 ? `Team size: ${team.length}` : 'Too many people on your team')

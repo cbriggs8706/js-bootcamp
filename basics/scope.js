@@ -1,13 +1,13 @@
 // Lexical Scope (Static Scope)
-// Global Scope - Defined otuside of all code blocks
-// Local Scope - Defined inside a codde block
+// Global Scope - Defined outside of all code blocks
+// Local Scope - Defined inside a code block
 
-// In a scope you can access variables defined in that scope, or in any parent
+// In a scope you can access variables defined in that scope, or in any parent/ancestor scope
 
 // Global Scope (varOne)
-    // Local Scope (varTwo)
-        // Local Scope (var Four)
-    // Local Scope (varThree)
+  // Local Scope (varTwo)
+    // Local Scope (varFour)
+  // Local Scope (varThree)
 
 let varOne = 'varOne'
 

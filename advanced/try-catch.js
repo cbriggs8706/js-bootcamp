@@ -7,16 +7,9 @@ const getTip = (amount) => {
 }
 
 try {
-    const result = getTip("A")
+    const result = getTip(10)
     console.log(result)
 } catch (e) {
-console.log(e.message)
-console.log('catch block is running')
+    console.log('catch block is running')
 }
 
-
-
-const something = function () {
-
-}
-console.log

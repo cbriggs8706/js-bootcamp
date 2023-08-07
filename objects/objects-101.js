@@ -10,16 +10,14 @@ myBook.title = 'Animal Farm'
 
 console.log(`${myBook.title} by ${myBook.author}`)
 
+// Challenge area
 
-
-let person = {
+let me = {
     name: 'Andrew',
     age: 27,
     location: 'Philadelphia'
 }
 
-console.log(`${person.name} is ${person.age} and lives in ${person.location}.`)
-
-person.age += 1
-
-console.log(`${person.name} is ${person.age} and lives in ${person.location}.`)
+console.log(`${me.name} is ${me.age} and lives in ${me.location}.`)
+me.age = me.age + 1
+console.log(`${me.name} is ${me.age} and lives in ${me.location}.`)
